@@ -1,0 +1,16 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<ul>
+	<f:for each="{fileCollections}" as="fileCollection">
+		<li>
+			<f:link.action action="showGallery" arguments="{fileCollectionUid: fileCollection.identifier}" class="tx-mediagallery-gallerylink">
+					{fileCollection.title}
+			</f:link.action>
+		</li>
+	</f:for>
+</ul>
+</f:section>

@@ -1,0 +1,35 @@
+{namespace mediagallery=Tx_MediaGallery_ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="main">
+<f:flashMessages />
+
+<h3>{fileCollection.title}</h3>
+
+<mediagallery:pagebrowser completeItemList="{fileCollection.items}" shownItemList="itemsToRender" previousPage="previousPage" nextPage="nextPage" itemsPerPage="{settings.gallery.itemsPerPage}">
+<ul class="tx-mediagallery-gallery">
+	<f:for each="{itemsToRender}" as="galleryItem" iteration="itemIterator">
+		<li>
+			<f:render partial="Items/Teaser/Type{galleryItem.type}" arguments="{_all}" />
+		</li>
+	</f:for>
+</ul>
+
+<nav class="tx-mediagallery-pagebrowser">
+	<f:if condition="{previousPage} > 0">
+		<f:link.action action="showGallery" class="previewLink" arguments="{fileCollectionUid: fileCollection.identifier, page: previousPage}"><f:translate key="link.previous">previous</f:translate></f:link.action>
+	</f:if>
+	<f:if condition="{nextPage} > 0">
+		<f:link.action action="showGallery" class="nextLink" arguments="{fileCollectionUid: fileCollection.identifier, page: nextPage}"><f:translate key="link.next">next</f:translate></f:link.action>
+	</f:if>
+</nav>
+
+</mediagallery:pagebrowser>
+
+<f:if condition="{showOverviewLink}">
+	<f:link.action action="list">
+		<f:translate key="link.backToOverview">Back to list</f:translate>
+	</f:link.action>
+</f:if>
+
+</f:section>

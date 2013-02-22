@@ -1,0 +1,13 @@
+{namespace this=Tx_MediaGallery_ViewHelpers}
+{namespace media=Tx_Media_ViewHelpers}
+<f:alias map="{previewImage: '{media:variants.Thumbnail(file: galleryItem)}'}">
+	<f:if condition="{previewImage}">
+		<f:then>
+			<f:image src="{previewImage.publicUrl}" alt="{galleryItem.alternative}" title="{galleryItem.title}" height="{settings.gallery.image.height}" width="{settings.gallery.image.width}" />
+		</f:then>
+		<f:else>
+			<f:image src="{settings.videoPlaceHolder}" alt="{galleryItem.alternative}" title="{galleryItem.title}" height="{settings.gallery.image.height}" width="{settings.gallery.image.width}" />
+		</f:else>
+	</f:if>
+	<span>&gt; {galleryItem.title}</span>
+</f:alias>

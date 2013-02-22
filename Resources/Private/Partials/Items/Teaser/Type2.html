@@ -1,0 +1,14 @@
+<div class="mediagallery-teaser mediagallery-teaser-image">
+<f:if condition="{settings.onreadyjs}">
+	<f:then>
+		<a href="{f:uri.image(src: galleryItem.publicUrl, maxWidth: settings.single.image.width, maxHeight: settings.single.image.height)}" class="tx-mediagallery-lightbox tx-mediagallery-lightbox-{fileCollection.identifier} {f:if(condition: settings.allowDownload, then: 'lightbox-allowDownload')}" rel="lightbox[fileCollection.identifier]" title="{galleryItem.title} {galleryItem.properties.name}" rel="tx-mediagallery-{fileCollection.identifier}">
+			<f:image src="{galleryItem.publicUrl}" alt="{galleryItem.alternative}" title="{galleryItem.title}" height="{settings.gallery.image.height}" width="{settings.gallery.image.width}" />
+		</a>
+	</f:then>
+	<f:else>
+		<f:link.action action="showImage" arguments="{singleItemIndex: itemIterator.index, fileCollectionUid: fileCollection.identifier}">
+			<f:image src="{galleryItem.publicUrl}" alt="{galleryItem.alternative}" title="{galleryItem.title}" height="{settings.gallery.image.height}" width="{settings.gallery.image.width}" />
+		</f:link.action>
+	</f:else>
+</f:if>
+</div>

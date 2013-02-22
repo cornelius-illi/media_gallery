@@ -1,0 +1,18 @@
+{namespace media=Tx_Media_ViewHelpers}
+<div class="mediagallery-teaser mediagallery-teaser-video">
+<f:if condition="{settings.enableLightbox}">
+	<f:then>
+		<a href="#tx-mediagallery-lightbox-{fileCollection.identifier}-{galleryItem.uid}" class="tx-mediagallery-lightbox tx-mediagallery-lightbox-{fileCollection.identifier}" rel="lightbox[fileCollection.identifier]" title="{galleryItem.title}" rel="tx-mediagallery-{fileCollection.identifier}">
+			<f:render partial="Items/Teaser/TypeVideoInternal" arguments="{_all}" />
+		</a>
+		<div style="position: absolute; left:-9999px"><div id="tx-mediagallery-lightbox-{fileCollection.identifier}-{galleryItem.uid}">
+			<media:video video="{galleryItem}" previewImage="{settings.videoPlaceHolder}" />
+		</div></div>
+	</f:then>
+	<f:else>
+		<f:link.action action="showImage" arguments="{singleItemIndex: itemIterator.index, fileCollectionUid: fileCollection.identifier}">
+			<f:render section="Items/Teaser/TypeVideoInternal" arguments="{_all}" />
+		</f:link.action>
+	</f:else>
+</f:if>
+</div>

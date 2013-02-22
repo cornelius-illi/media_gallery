@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Media Gallery extension in the Frontend</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="overview">Gallery</label>
+			<label index="image">Image</label>
+			<label index="link.backToGallery">Back to gallery</label>
+			<label index="link.backToOverview">Back to list</label>
+			<label index="link.previous">previous</label>
+			<label index="link.next">next</label>
+			<label index="lightbox.current">image {current} of {total}</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="overview">Überblick</label>
+			<label index="image">Bild</label>
+			<label index="link.backToGallery">Zurück zur Bildergalerie</label>
+			<label index="link.backToOverview">Zurück zur Übersicht</label>
+			<label index="lightbox.current">Bild {current} von {total}</label>
+			<label index="link.previous">Zurück</label>
+			<label index="link.next">Weiter</label>
+		</languageKey>
+	</data>
+</T3locallang>
